@@ -1,0 +1,37 @@
+*{
+ box-sizing: border-box;   
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    overflow-x: hidden;
+}
+h1{
+    margin: 10px;
+}
+.box{
+    background-color: aqua;
+    height: 350px;
+    width: 400px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transform: translateX(600%);
+    color:white;
+    transition: transform 0.5s ease;
+}
+.box:nth-of-type(even){
+    transform: translateX(-600%);
+}
+.box.show{
+    transform: translateX(0);
+}
+
+
