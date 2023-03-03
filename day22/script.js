@@ -3,16 +3,25 @@ const ctx=canvas.getContext('2d');
 const increase=document.getElementById('increase')
 const decrease=document.getElementById('decrease')
 const sizeSpan=document.getElementById('size')
-let size=20;
+const colorPicker=document.getElementById('color');
+const clear=document.getElementById('clear');
+let size=10;
 let color='black'
 
 let x
 let y
 let isPressed=false;
 
+clear.addEventListener('click',()=>{
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+})
+
+colorPicker.addEventListener('change',(e)=>color=e.target.value)
+
 increase.addEventListener('click',()=>{
     size+=1;
     sizeSpan.innerHTML=`${size}`
+
 })
 
 decrease.addEventListener('click',()=>{
