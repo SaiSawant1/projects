@@ -1,0 +1,50 @@
+*{
+ box-sizing: border-box;   
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rebeccapurple;
+}
+.btn{
+    background-color: white;
+    color: rebeccapurple;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.btn:focus{
+    outline: none;
+}
+.btn:active{
+    transform: scale(0.98);
+}
+#toasts{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+.toast{
+    background-color: white;
+    color: rebeccapurple;
+    border-radius:5px;
+    padding: 1rem;
+    margin-bottom: 5px;
+}
+.toast+.red{
+    color: red;
+}
+.toast+.green{
+    color: green;
+}
