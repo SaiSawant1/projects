@@ -1,10 +1,12 @@
+
+
 const addBtn=document.getElementById('add')
 
 addBtn.addEventListener('click',()=>{
     addNewNote()
 })
 
-const addNewNote=(text="hellow")=>{
+const addNewNote=(text="")=>{
     const note=document.createElement('div')
     note.classList.add('note')
     note.innerHTML=`<div class="tool">
@@ -20,7 +22,7 @@ const addNewNote=(text="hellow")=>{
     const textArea=note.querySelector("textarea")
     
     textArea.value=text
-    main.innerHTML=marked(text)
+    main.innerHTML=marked.parse(text)
 
     deleteBtn.addEventListener('click',()=>{
         note.remove()
@@ -28,7 +30,11 @@ const addNewNote=(text="hellow")=>{
 
     editBtn.addEventListener('click',()=>{
         main.classList.toggle('hidden')
-        text.classList.toggle('hidden')
+        textArea.classList.toggle('hidden')
+    })
+    textArea.addEventListener("input",(e)=>{
+        const {value}= e.target
+        main.innerHTML=marked.parse(value)
     })
 
     document.body.appendChild(note)
