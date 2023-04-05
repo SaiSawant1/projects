@@ -1,0 +1,55 @@
+*{
+ box-sizing: border-box;   
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.counter{
+    text-align: center;
+}
+.counter h4{
+    margin: 0;
+}
+span{
+    font-size: 3rem;
+    display: none;
+    font-weight: bold;
+}
+.in{
+    display: block;
+    transform-origin: bottom;
+    animation: countdownAnimation 0.9s ease-in-out forwards;
+}
+.final{
+    display: none;
+    text-align: center;
+}
+.final h1{
+    margin: 0.5rem;
+}
+
+@keyframes countdownAnimation {
+    0%{
+        transform: rotateZ(65deg);
+    }
+    50%{
+        transform: rotateZ(-30deg); 
+    }
+    75%{
+        transform: rotateZ(-10deg); 
+    }
+    85%{
+        transform: rotateZ(-40deg); 
+    }
+    100%{
+        transform: rotateZ(60deg); 
+    }
+}
+
