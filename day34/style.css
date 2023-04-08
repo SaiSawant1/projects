@@ -4,52 +4,104 @@
 body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     overflow: hidden;
 }
+h4{
+    font-size: 20px;
+    margin: 0;
+    text-transform: uppercase;
+}
 .counter{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     text-align: center;
 }
-.counter h4{
-    margin: 0;
-}
-span{
-    font-size: 3rem;
-    display: none;
-    font-weight: bold;
-}
-.in{
-    display: block;
-    transform-origin: bottom;
-    animation: countdownAnimation 0.9s ease-in-out forwards;
+.counter.hide{
+    transform: translate(-50%,-50%) scale(0);
+    animation: hide 0.2s ease-out; 
+
 }
 .final{
-    display: none;
-    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
 }
-.final h1{
-    margin: 0.5rem;
+.final.show{
+    transform: translate(-50%,-50%) scale(1);
+    animation: hide 0.2s ease-out; 
 }
-
-@keyframes countdownAnimation {
+.nums{
+    color: #3498db;
+    font-size: 50px;
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 250px;
+}
+.nums span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(120deg);
+    transform-origin:  bottom center;
+}
+.nums span.in{
+    transform: translate(-50%,-50%) rotate(0);
+    animation: goIn .5s ease-in-out;
+    
+}
+.nums span.out{
+    transform: translate(-50%,-50%) rotate(120deg);
+    animation: goOut .5s ease-in-out;
+    
+}
+@keyframes goIn {
     0%{
-        transform: rotateZ(65deg);
+        transform: translate(-50%,-50%) rotate(120deg); 
     }
-    50%{
-        transform: rotateZ(-30deg); 
+    30%{
+       transform: translate(-50%,-50%) rotate(-20deg);
     }
-    75%{
-        transform: rotateZ(-10deg); 
-    }
-    85%{
-        transform: rotateZ(-40deg); 
+    60%{
+        transform: translate(-50%,-50%) rotate(10deg);
     }
     100%{
-        transform: rotateZ(60deg); 
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+@keyframes goOut {
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg); 
+    }
+    
+    60%{
+        transform: translate(-50%,-50%) rotate(20deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(-120deg);
+    }
+}
+@keyframes show {
+    0%{
+        transform: translate(-50%,-50%) scale(0);
+    }
+    30%{
+        transform: translate(-50%,-50%) scale(1.4);
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+}
+@keyframes hide {
+    0%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(0);
     }
 }
 
