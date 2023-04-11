@@ -1,0 +1,31 @@
+*{
+ box-sizing: border-box;   
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+img{
+    min-width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+.image-container{
+    display: flex;
+    transform: translateX(0px);
+    transition: transform 0.5s ease-in-out;
+}
+.carousel{
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    height: 530px;
+    width: 500px;
+    overflow: hidden;
+}
+.buttons-container{
+    text-align: center;
+}
+
