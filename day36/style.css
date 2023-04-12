@@ -1,0 +1,29 @@
+*{
+ box-sizing: border-box;   
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+}
+.container{
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.small-box{
+    height: 10px;
+    width: 10px;
+    background-color: rgb(62, 59, 59);
+    margin: 2px;
+    transition: all 0.5ms ease-in-out;
+}
+
